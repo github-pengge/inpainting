@@ -1,4 +1,4 @@
-## inpainting
+## Image inpainting
 Image inpainting using GAN and/or partial convolution with progressive growing training scheme.
 
 **Warning**: progressive growing scheme might be problematic and use more gpu memory. In my experiments, no improvement was observed.
