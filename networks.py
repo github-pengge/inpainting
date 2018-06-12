@@ -535,6 +535,8 @@ class LocalDiscriminator(nn.Module):
             oc = min(2 ** (i+4), 512)  # 2018.06.12 use smaller network
             net.extend([nn.Conv2d(ic, oc, 4, 2, 1), nn.BatchNorm2d(oc), lrelu])
         net.extend([Flatten(), nn.Linear(oc*2*2, 1, bias=True), nn.Sigmoid()])
+        # PixelDiscriminator might be a better choice.
+        # see https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/08f4de1a61f16b42333b75b9c1f2287c5fe0796c/models/networks.py#L360
         self.net = nn.Sequential(*net)
         init_weights(self.net, init_type)
 
