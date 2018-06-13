@@ -8,6 +8,13 @@ In my experiments, I use CelebA-HQ datasets. To create it, see [tkarras/progress
 
 You can use `generate_holes.py` to create rectangle holes with multiple resolutions. For irregular holes, `generate_irregular_holes.py` is a way to create it(probably not a good way).
 
+### Proposed config
+* `progressive_growing = False`
+* `use_gan = True` if `g_input = masked_X`; `use_gan = False` if `g_input = masked_X+mask`
+* `decoder_partial_conv = False`
+* `pix2pix_style = False`
+* `block = basic` for lower gpu memory consumption.
+
 ### Related papers
 * [Partial conv](https://arxiv.org/abs/1804.07723)
 * GAN
